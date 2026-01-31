@@ -1,0 +1,1 @@
+const i={key:"v-9629110c",path:"/Docs/privacypolicy.html",title:"Privacy policy considerations",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:1,title:"Privacy policy considerations",slug:"privacy-policy-considerations",children:[]}],git:{updatedTime:null},filePathRelative:"Docs/privacypolicy.md"};export{i as data};

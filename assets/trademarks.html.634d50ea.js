@@ -1,0 +1,1 @@
+const e={key:"v-7982067c",path:"/Docs/trademarks.html",title:"Trademarks",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:1,title:"Trademarks",slug:"trademarks",children:[]}],git:{updatedTime:null},filePathRelative:"Docs/trademarks.md"};export{e as data};

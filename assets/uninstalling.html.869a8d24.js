@@ -1,0 +1,1 @@
+const e={key:"v-64756ec4",path:"/Docs/uninstalling.html",title:"Uninstalling IMS Explorer for VS Code",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:1,title:"Uninstalling IMS Explorer for VS Code",slug:"uninstalling-ims-explorer-for-vs-code",children:[]}],git:{updatedTime:null},filePathRelative:"Docs/uninstalling.md"};export{e as data};
