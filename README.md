@@ -22,16 +22,14 @@ Visit [IMS Explorer Github repository](https://github.com/IBM/ims-explorer-about
 
 ## Table of contents
 
-- [Support](#support)
 - [Prerequisites](#prerequisites)
+- [Installing](#installing)
 - [Extension settings](#extension-settings)
 - [Configuring IMS Workspaces](#configuring-ims-workspaces)
 - [Configuring Java](#configuring-java)
 - [Capabilities](#capabilities)
+- [Support](#support)
 
-## Support
-
-To report issues or submit feedback about this extension, please open an [issue in our GitHub repository](https://github.com/IBM/ims-explorer-about/issues). GitHub issues may also be used to submit requests for future enhancements
 
 ## Prerequisites
 
@@ -49,6 +47,36 @@ The following software requirements must be met to run IMS Explorer for VS Code.
   - Newer versions of Java should also work, but IMS Explorer for VS Code is developed on and tested for Java 21.
 
 <!-- (Optional) Git: To use the features that involve Git, you must install Git and have it available in your system path so that VS Code can display it. On Macs, Git comes out of the box. On Linux, you can install Git with your distribution's package manager. On Windows, you can get Git from <https://git-scm.com>. -->
+## Installing
+
+The following instructions describe how to install the IMS Explorer for VS Code extension.
+
+### 1. Install Visual Studio Code
+IMS Explorer for VS Code requires **VS Code 1.105.0 or later**.
+Download VS Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)
+
+> **Tip:** Microsoft’s *Visual Studio Code for Java Installer* can automatically install VS Code and a Java SDK.
+
+### 2. Install the IMS Explorer for VS Code Extension
+There are several ways to download and install IBM IMS Explorer for VS Code. You can install it directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=IBM.ims-explorer-for-vscode) website or within the VS Code editor. Alternatively, you can download a ZIP of the extension with provided code signing signature files that you can use to verify the integrity of the downloaded files.
+
+#### Installing IBM IMS Explorer for VS Code from the VS Code marketplace
+1. Open **Visual Studio Code**.
+2. Go to the **Extensions** panel. You can do this by clicking **View**>**Extensions**.
+3. Search for **IMS Explorer for VS Code**.
+4. Select the page that features the [IBM IMS Explorer for VS Code](https://marketplace.visualstudio.com/items?itemName=IBM.ims-explorer-for-vscode) and click **Install**.
+
+#### Installing IBM IMS Explorer for VS Code from a VSIX file
+
+You can also download the IBM IMS Explorer for VS Code extension from the [IBM Mainframe downloads](https://ibm.github.io/mainframe-downloads/downloads.html) website. Here, you can download the extension file directly. Use the following steps in VS Code to install the VSIX file manually.
+
+1. Unzip the downloaded zip file.
+2. Open the README.txt file in a text editor and follow the steps described there to verify the individual files with the provided code signing signatures.
+3. To install the `ims-explorer-for-vscode-<version>.vsix` file in VS Code, click the **Extensions** icon in VS Code's activity bar to open the Extensions view.
+4. Click the ... icon in the Extensions view's upper-right corner to reveal a drop-down menu of more actions.
+5. In the drop-down menu that appears, click **Install from VSIX**.
+6. Use the file picker that pops up to navigate to and select the VSIX file you downloaded, and then click **Install**.
+7. The extension should be installed from the VSIX file.
 
 ## Extension settings
 
@@ -171,4 +199,8 @@ Edit and execute SQL from an IMS project file against an IMS database using a sp
 Each result set from SQL queries are stored in a query history view. You can download SQL result sets as a CSV file.
 
 ![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/sqlresulthistory.gif)
+
+## Support
+
+To report issues or submit feedback about this extension, please open an [issue in our GitHub repository](https://github.com/IBM/ims-explorer-about/issues). GitHub issues may also be used to submit requests for future enhancements
 
