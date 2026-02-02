@@ -1,0 +1,1 @@
+const e={key:"v-fdae3892",path:"/Docs/Prerequisites.html",title:"Prerequisites",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:1,title:"Prerequisites",slug:"prerequisites",children:[{level:2,title:"System Requirements",slug:"system-requirements",children:[]}]}],git:{updatedTime:null},filePathRelative:"Docs/Prerequisites.md"};export{e as data};
