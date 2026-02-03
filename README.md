@@ -58,7 +58,7 @@ Download VS Code: [https://code.visualstudio.com/](https://code.visualstudio.com
 > **Tip:** Microsoft’s *Visual Studio Code for Java Installer* can automatically install VS Code and a Java SDK.
 
 ### 2. Install the IMS Explorer for VS Code Extension
-There are several ways to download and install IBM IMS Explorer for VS Code. You can install it directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=IBM.ims-explorer-for-vscode) website or within the VS Code editor. Alternatively, you can download a ZIP of the extension with provided code signing signature files that you can use to verify the integrity of the downloaded files.
+There are several ways to download and install IBM IMS Explorer for VS Code. You can install it directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=IBM.ims-explorer-for-vscode) website or within the VS Code editor. Alternatively, you can download a ZIP of the extension from the [IBM Mainframe downloads](https://ibm.github.io/mainframe-downloads/downloads.html) with provided code signing signature files that you can use to verify the integrity of the downloaded files.
 
 #### Installing IBM IMS Explorer for VS Code from the VS Code marketplace
 1. Open **Visual Studio Code**.
