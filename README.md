@@ -1,10 +1,5 @@
 Welcome to the IMS Explorer Github repository.  This repository provides you information for the new IMS Explorer for VS Code offering.  You can find announcements of the latest updates as well as to provide feedback, submit questions, polls, request for enhancements and files issues. 
 
-# License
-
-- The license for the files managed in this repository, which may consists of files for issues, discussion items and education collaterals is in the file LICENSE.
-- The license and notices files for the IMS Explorer for VS Code offering can be found in the product-licenses folder.
-
 # IBM IMS® Explorer for VS Code
 
 **IMS Explorer for VS Code provides modern development practices and simplifies complex IMS development tasks using Visual Studio Code.**
@@ -22,6 +17,7 @@ Visit [IMS Explorer Github repository](https://github.com/IBM/ims-explorer-about
 
 ## Table of contents
 
+- [License](#license)
 - [Prerequisites](#prerequisites)
 - [Installing](#installing)
 - [Extension settings](#extension-settings)
@@ -30,6 +26,10 @@ Visit [IMS Explorer Github repository](https://github.com/IBM/ims-explorer-about
 - [Capabilities](#capabilities)
 - [Support](#support)
 
+## License
+
+- The license for the files managed in this repository, which may consists of files for issues, discussion items and education collaterals is in the file LICENSE.
+- The license and notices files for the IMS Explorer for VS Code offering can be found in the product-licenses folder.
 
 ## Prerequisites
 
