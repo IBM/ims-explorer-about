@@ -1,0 +1,1 @@
+const a={key:"v-d726a49c",path:"/Docs/Configuring-java.html",title:"Configuring Java",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:1,title:"Configuring Java",slug:"configuring-java",children:[{level:2,title:"Java Configuration",slug:"java-configuration",children:[]}]}],git:{updatedTime:null},filePathRelative:"Docs/Configuring-java.md"};export{a as data};
