@@ -13,7 +13,7 @@ Designed for application developers, database administrators, and system program
 
 See [Capabilities](#capabilities) below for more details.
 
-Visit [IMS Explorer Github repository](https://github.com/IBM/ims-explorer-about) for documentation and additional information. Engage in the [community forum](https://github.com/IBM/ims-explorer-about/discussions) for announcements of latest updates, provide feedback, submit questions, polls or request for ideas.
+View [full documentation](http://ibm.biz/ims-explorer-vscode-doc) and additional information in the [IMS Explorer Github repository](https://github.com/IBM/ims-explorer-about).  Engage in the [community forum](https://github.com/IBM/ims-explorer-about/discussions) for announcements of latest updates, provide feedback, submit questions, polls or request for ideas.
 
 ## Table of contents
 
