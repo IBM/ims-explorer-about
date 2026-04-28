@@ -1,6 +1,6 @@
 NOTICES AND INFORMATION
 
-IBM IMS Explorer for VS Code 1.0
+IBM IMS Explorer for VS Code 1.1
 
 The IBM license agreement and any applicable information on the web
 download page for IBM products refers Licensee to this file for details
@@ -35,7 +35,9 @@ TABLE OF CONTENTS
 THIS IBM NOTICES FILE CONSISTS OF THE FOLLOWING SECTIONS:
 
 Apache-2.0
+BlueOak-1.0.0
 BSD-3-Clause
+EDL-1.0
 EPL-2.0
 ISC
 MIT
@@ -236,10 +238,120 @@ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 END OF APACHE-2.0 CODE NOTICES AND INFORMATION
 
 --------------------------------------------------------------------------------
+BLUE OAK MODEL NOTICES AND INFORMATION
+
+minimatch
+
+# Blue Oak Model License
+
+Version 1.0.0
+
+## Purpose
+
+This license gives everyone as much permission to work with
+this software as possible, while protecting contributors
+from liability.
+
+## Acceptance
+
+In order to receive this license, you must agree to its
+rules.  The rules of this license are both obligations
+under that agreement and conditions to your license.
+You must not do anything with this software that triggers
+a rule that you cannot or will not follow.
+
+## Copyright
+
+Each contributor licenses you to do everything with this
+software that would otherwise infringe that contributor's
+copyright in it.
+
+## Notices
+
+You must ensure that everyone who gets a copy of
+any part of this software from you, with or without
+changes, also gets the text of this license or a link to
+<https://blueoakcouncil.org/license/1.0.0>.
+
+## Excuse
+
+If anyone notifies you in writing that you have not
+complied with [Notices](#notices), you can keep your
+license by taking all practical steps to comply within 30
+days after the notice.  If you do not do so, your license
+ends immediately.
+
+## Patent
+
+Each contributor licenses you to do everything with this
+software that would otherwise infringe any patent claims
+they can license or become able to license.
+
+## Reliability
+
+No contributor can revoke this license.
+
+## No Liability
+
+***As far as the law allows, this software comes as is,
+without any warranty or condition, and no contributor
+will be liable to anyone for any damages related to this
+software or this license, under any kind of legal claim.***
+
+
+END OF BLUE OAK MODEL NOTICES AND INFORMATION
+
+--------------------------------------------------------------------------------
 
 BSD-3-CLAUSE CODE NOTICES AND INFORMATION
 
 The Program includes some or all of the following that IBM obtained under the BSD-3-Clause License:
+
+
+asm | Copyright OW2, Copyright 2000-2011 INRIA
+asm-commons | Copyright OW2, Copyright 2000-2011 INRIA
+asm-tree | Copyright OW2, Copyright 2000-2011 INRIA
+
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions 
+are met:
+
+1. Redistributions of source code must retain the above copyright 
+notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright 
+notice, this list of conditions and the following disclaimer in the 
+documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its 
+contributors may be used to endorse or promote products derived from 
+this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED 
+TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A 
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED 
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+END OF BSD-3-CLAUSE CODE NOTICES AND INFORMATION
+
+
+--------------------------------------------------------------------------------
+
+
+EDL-1.0 CODE NOTICES AND INFORMATION
+
+The Program includes some or all of the following that IBM obtained under the Eclipse Distribution 1.0 License:
 
 
 angus-activation | Copyright 2021-2023 Oracle and/or its affiliates, Copyright 2018 Oracle and/or its affiliates
@@ -281,7 +393,7 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-END OF BSD-3-CLAUSE CODE NOTICES AND INFORMATION
+END OF EDL-1.0 CODE NOTICES AND INFORMATION
 
 
 --------------------------------------------------------------------------------
@@ -295,6 +407,10 @@ License (source code available via the indicated URL):
 jakarta.json.bind-api-3.0.0.jar (https://repo.maven.apache.org/maven2/jakarta/json/bind/jakarta.json.bind-api/3.0.0/)
 org.eclipse.lsp4j-0.24.0.jar (https://repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j/0.24.0/)
 org.eclipse.lsp4j.jsonrpc-0.24.0.jar (https://repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.24.0/)
+org.jacoco.report-0.8.11.jar (https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.8.11/)
+org.jacoco.agent-0.8.11.jar (https://repo1.maven.org/maven2/org/jacoco/org.jacoco.agent/0.8.11/)
+org.jacoco.ant-0.8.11.jar (https://repo1.maven.org/maven2/org/jacoco/org.jacoco.ant/0.8.11/)
+org.jacoco.core-0.8.11 (https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.8.11/)
 
 
 END OF EPL-2.0 CODE NOTICES AND INFORMATION
@@ -309,7 +425,6 @@ ISC Licenses:
 
 flatted | Copyright 2018-2020 Andrea Giammarchi
 graceful-fs | Copyright 2011-2022 Isaac Z. Schlepper
-minimatch | Copyright 2011-2023 Isaac Z. Schlueter and Contributors
 semver | Copyright 2011-2023 Isaac Z. Schlueter and Contributors
 
 
@@ -390,6 +505,6 @@ END OF NOTICES AND INFORMATION
 
 
 
-L/N: L-DQBJ-TTQYED
-D/N: L-DQBJ-TTQYED
-P/N: L-DQBJ-TTQYED
+L/N: L-CXSF-B5FXZD
+D/N: L-CXSF-B5FXZD
+P/N: L-CXSF-B5FXZD

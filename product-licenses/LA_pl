@@ -3,7 +3,7 @@ INFORMACJE LICENCYJNE
 Programy wymienione poniżej są licencjonowane na podstawie przedstawionych poniżej warunków Informacji licencyjnych, które stanowią uzupełnienie warunków licencji na Program uzgodnionych uprzednio między Klientem a IBM. Jeśli Klient nie dysponuje warunkami licencji uzgodnionymi uprzednio z IBM w odniesieniu do Programu, zastosowanie mają warunki licencji Międzynarodowa Umowa Licencyjna na Programy nieobjęte Gwarancją (i125-5589-06).
 
 Nazwa Programu (Numer Programu):
-IBM IMS Explorer for VS Code 1.0 (Tool)
+IBM IMS Explorer for VS Code 1.1 (Tool)
 
 Poniższe standardowe warunki mają zastosowanie do używania Programu przez Licencjobiorcę.
 
@@ -12,16 +12,16 @@ Ograniczenia dotyczące używania Programu
 Program ten jest dostarczany jedynie w celu używania z Określonymi Programami i/lub Usługami zidentyfikowanymi poniżej lub ich kolejnymi wersjami. Licencjobiorcy nie wolno używać tego Programu w połączeniu z żadnym innym oprogramowaniem lub usługą.
 
 Określone Programy i/lub Usługi:
-IBM Information Management System Version 15.3 or later
+IBM Information Management System V15.3 or later
 
 Modyfikowany Kod Osób Trzecich
 
 Jeśli w pliku NOTICES (UWAGI) IBM określi kod osoby trzeciej jako „Modyfikowalny Kod Osób Trzecich", to IBM upoważnia Licencjobiorcę do 1) modyfikowania Modyfikowalnego Kodu Osób Trzecich oraz 2) odtwarzania kodu źródłowego modułów Programu, które bezpośrednio współpracują z Modyfikowalnym Kodem Osób Trzecich, pod warunkiem że służy to wyłącznie do debugowania modyfikacji wprowadzonych przez Licencjobiorcę w takim kodzie osoby trzeciej. Ewentualne zobowiązania IBM w zakresie serwisu i wsparcia dotyczą wyłącznie niezmodyfikowanego Programu.
 
 
-L/N: L-DQBJ-TTQYED
-D/N: L-DQBJ-TTQYED
-P/N: L-DQBJ-TTQYED
+L/N: L-CXSF-B5FXZD
+D/N: L-CXSF-B5FXZD
+P/N: L-CXSF-B5FXZD
 
 Międzynarodowa Umowa Licencyjna na Programy Nieobjęte Gwarancją
 
