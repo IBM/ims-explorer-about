@@ -1,19 +1,20 @@
-Welcome to the IMS Explorer Github repository.  This repository provides you information for the new IMS Explorer for VS Code offering.  You can find announcements of the latest updates as well as to provide feedback, submit questions, polls, request for enhancements and files issues. 
+Welcome to the IMS Explorer Github repository. This repository provides you information for the new IMS Explorer for VS Code offering. You can find announcements of the latest updates as well as to provide feedback, submit questions, polls, request for enhancements and files issues.
 
 # IBM IMS® Explorer for VS Code
 
 **IMS Explorer for VS Code provides modern development practices and simplifies complex IMS development tasks using Visual Studio Code.**
 
-Designed for application developers, database administrators, and system programmers, IMS Explorer for VS Code provides built-in features to access IMS inside Visual Studio Code IDE. By combining multiple activities into one environment, IMS Explorer for VS Code promotes modern development practices and simplifies complex IMS development tasks. IMS Explorer for VS Code 1.0.0 supports the following actions:
+Designed for application developers, database administrators, and system programmers, IMS Explorer for VS Code provides built-in features to access IMS inside Visual Studio Code IDE. By combining multiple activities into one environment, IMS Explorer for VS Code promotes modern development practices and simplifies complex IMS development tasks. IMS Explorer for VS Code 1.1.0 supports the following actions:
 
 - Create and edit projects, driver definitions, and database connections.
 - Connect to IMS Catalog and browse IMS databases.
 - View PSB, DBD, DDL sources, segments and fields of your database.
+- Visualize DBDs and PSBs for IMS database connections and IMS projects.
 - Access IMS data with SQL queries.
 
 See [Capabilities](#capabilities) below for more details.
 
-View [full documentation](http://ibm.biz/ims-explorer-vscode-doc) and additional information in the [IMS Explorer Github repository](https://github.com/IBM/ims-explorer-about).  Engage in the [community forum](https://github.com/IBM/ims-explorer-about/discussions) for announcements of latest updates, provide feedback, submit questions, polls or request for ideas.
+View [full documentation](http://ibm.biz/ims-explorer-vscode-doc) and additional information in the [IMS Explorer Github repository](https://github.com/IBM/ims-explorer-about). Engage in the [community forum](https://github.com/IBM/ims-explorer-about/discussions) for announcements of latest updates, provide feedback, submit questions, polls or request for ideas.
 
 ## Table of contents
 
@@ -47,20 +48,24 @@ The following software requirements must be met to run IMS Explorer for VS Code.
   - Newer versions of Java should also work, but IMS Explorer for VS Code is developed on and tested for Java 21.
 
 <!-- (Optional) Git: To use the features that involve Git, you must install Git and have it available in your system path so that VS Code can display it. On Macs, Git comes out of the box. On Linux, you can install Git with your distribution's package manager. On Windows, you can get Git from <https://git-scm.com>. -->
+
 ## Installing
 
 The following instructions describe how to install the IMS Explorer for VS Code extension.
 
 ### 1. Install Visual Studio Code
+
 IMS Explorer for VS Code requires **VS Code 1.105.0 or later**.
 Download VS Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
-> **Tip:** Microsoft’s *Visual Studio Code for Java Installer* can automatically install VS Code and a Java SDK.
+> **Tip:** Microsoft’s _Visual Studio Code for Java Installer_ can automatically install VS Code and a Java SDK.
 
 ### 2. Install the IMS Explorer for VS Code Extension
+
 There are several ways to download and install IBM IMS Explorer for VS Code. You can install it directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=IBM.ims-explorer-for-vscode) website or within the VS Code editor. Alternatively, you can download a ZIP of the extension from the [IBM Mainframe downloads](https://ibm.github.io/mainframe-downloads/downloads.html) with provided code signing signature files that you can use to verify the integrity of the downloaded files.
 
 #### Installing IBM IMS Explorer for VS Code from the VS Code marketplace
+
 1. Open **Visual Studio Code**.
 2. Go to the **Extensions** panel. You can do this by clicking **View**>**Extensions**.
 3. Search for **IMS Explorer for VS Code**.
@@ -82,19 +87,32 @@ You can also download the IBM IMS Explorer for VS Code extension from the [IBM M
 
 Configurations can be made in VS Code Extension settings in order to specify the following:
 
-- Java dependency Jar files for the IMS SQL service
 - Specific Java installations used for IMS connections
-- Maximum heap size for IMS connections
+- JVM arguments for the IMS Connection
+- Logging level for IMS Explorer logs
 - Storage location for extension data
-- Large list limit thresholds
 
 ## Configuring IMS workspaces
 
 Before getting started with an IMS project, ensure that the desired workspace for your IMS projects has been specified using the IMS Workspace status bar option. This option determines the location for the `ims.connections.json` file, and can provide a common location for IMS project files to be shared in source control.
 
+### Connection configuration options
+
+The `ims.connections.json` file supports additional configuration parameters for each connection:
+
+#### Show IMS Catalog metadata
+
+You can control the visibility of system-level IMS catalog DBDs and PSBs (those starting with the `DFSC` prefix) by setting the `showIMSCatalogs` parameter in your connection configuration in the `ims.connections.json` file.
+
+#### Auto-commit behavior
+
+SQL queries executed through IMS Explorer for VS Code use auto-commit mode by default. This means that each SQL statement is automatically committed immediately after execution.
+
+> **Note**: Auto-commit is always enabled and cannot be disabled. All SQL operations are committed automatically.
+
 ## Configuring Java
 
-The IMS Explorer for VS Code extension utilizes VS Code user settings to configure Java. These settings allow you to select the specific installation of Java to pick, in case you have several installations, as well as set parameters such as how much memory you want the language servers to use.
+The IMS Explorer for VS Code extension utilizes VS Code user settings to configure Java. These settings allow you to select the specific installation of Java to pick, in case you have several installations. Certain settings, such as how much memory you want the IMS Explorer for VS Code extension language servers to use, must be set at the JVM level.
 
 ### Selecting the Java installation to use
 
@@ -124,12 +142,12 @@ On Windows:
 "ims.explorer.connection.property.javaHome": "C:\\Program Files\\Java\\jdk21"
 ```
 
-### Configuring Java memory allocation
+### Configuring JVM arguments
 
-By default, a maximum of 2 gigabytes of memory will be allocated to be used for each IMS database connection. Ensure that your system has enough memory to support multiple database connections and SQL calls by using the following VS Code Settings provided to specify the maximum value of allocated memory.
+JVM arguments are used for configuring connections to IMS. Use the following VS Code Setting example to configure JVM arguments such as memory heap allocation for IMS connections.
 
 ```json
-"ims.explorer.connection.property.maxHeapSize": "2g"
+"ims.explorer.connection.property.jvmArgs": "-Xms2g -Xmx4g -Denv=prod -Djavax.net.debug=ssl,handshake,trustmanager"
 ```
 
 ### Configuring log level
@@ -140,7 +158,7 @@ The default Java logging level is info. Use the following VS Code Setting to cha
 "ims.explorer.logging.level": "INFO"
 ```
 
-The logs appear in the Output panel. Additional logs would be displayed in the `IBM IMS Explorer for VS Code` output channel and the `IBM IMS Explorer LSP server` output channel.
+The logs appear in the `IBM IMS Explorer for VS Code` output channel.
 
 ### Configuring IMS Workspace
 
@@ -200,7 +218,18 @@ Each result set from SQL queries are stored in a query history view. You can dow
 
 ![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/sqlresulthistory.gif)
 
+### Import DBDs and PSBs from the IMS catalog
+
+Select an IMS database connection from the IMS Connections View to import DBDs and PSBs from. Filter and select which DBDs and PSBs to import into an IMS project. Optionally, you can choose to import any referenced DBDs.
+
+![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/import.gif)
+
+### Visualize DBDs and PSBs
+
+View DBDs and PSBs in an interactive hierarchical visualization, allowing visual navigation of segments and view of segment fields by expanding their contents. Swap between source, DDL, tables, or visualization as needed using tabs or context menus.
+
+![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/visualization.gif)
+
 ## Support
 
-To report issues or submit feedback about this extension, please open an [issue in our GitHub repository](https://github.com/IBM/ims-explorer-about/issues). GitHub issues may also be used to submit requests for future enhancements
-
+To report issues or submit feedback about this extension, you can contact support or open an [issue in our GitHub repository](https://github.com/IBM/ims-explorer-about/issues). GitHub issues may also be used to submit requests for future enhancements
