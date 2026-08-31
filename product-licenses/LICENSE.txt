@@ -3,7 +3,7 @@ LICENSE INFORMATION
 The Programs listed below are licensed under the following License Information terms and conditions in addition to the Program license terms previously agreed to by Client and IBM. If Client does not have previously agreed to license terms in effect for the Program, the International License Agreement for Non-Warranted Programs (i125-5589-06) applies.
 
 Program Name (Program Number):
-IBM IMS Explorer for VS Code 1.1 (Tool)
+IBM IMS Explorer for VS Code 1.2 (Tool)
 
 The following standard terms apply to Licensee's use of the Program.
 
@@ -12,16 +12,16 @@ Limited Use Program
 This Program is supplied only for use with Named Program(s) and/or Service(s) identified below or their successors. Licensee is prohibited from using this Program in connection with any other software or service.
 
 Named Program(s) and/or Service(s):
-IBM Information Management System V15.3 or later
+IBM Information Management System 15.3 or later
 
 Modifiable Third Party Code
 
 To the extent, if any, in the NOTICES file IBM identifies third party code as "Modifiable Third Party Code," IBM authorizes Licensee to 1) modify the Modifiable Third Party Code and 2) reverse engineer the Program modules that directly interface with the Modifiable Third Party Code provided that it is only for the purpose of debugging Licensee's modifications to such third party code. IBM's service and support obligations, if any, apply only to the unmodified Program.
 
 
-L/N: L-CXSF-B5FXZD
-D/N: L-CXSF-B5FXZD
-P/N: L-CXSF-B5FXZD
+L/N: L-DZEF-U52LX6
+D/N: L-DZEF-U52LX6
+P/N: L-DZEF-U52LX6
 
 International License Agreement for Non-Warranted Programs
 

@@ -1,22 +1,19 @@
 INFORMATIONS SUR LA LICENCE
 
-Les Logiciels spécifiés ci-dessous sont concédés sous licence conformément aux dispositions des Informations sur la Licence suivantes qui s'ajoutent à celles des dispositions de la licence du Logiciel précédemment acceptée par le Client et IBM. Si le Client n'a pas précédemment accepté les dispositions de la licence en vigueur pour le Logiciel, les Conditions Internationales d'Utilisation de Logiciels IBM non garantis (i125-5589-06) s'appliquent.
+Les Programmes énumérés ci-dessous sont concédés sous licence conformément aux modalités des Informations sur la licence ci-après, en plus des modalités de licence du Programme précédemment convenues entre le Client et IBM. Si le Client n’a pas préalablement accepté les modalités de licence en vigueur pour le Programme, le Conditions Internationales d'Utilisation de Logiciels IBM non garantis (Canada) (i125-5589-06) s’applique.
 
-Nom du Logiciel (Référence du Logiciel) : 
+Nom du Programme (Numéro du Programme) :
 IBM IMS Explorer for VS Code 1.2 (Tool)
 
-Les dispositions suivantes s'appliquent à l'utilisation du Logiciel par le Détenteur de la Licence.
+Les modalités standard suivantes s’appliquent à l’utilisation du Programme par le Détenteur de licence.
 
-Logiciel à Utilisation Restreinte
+Programme à usage limité
 
-Ce Logiciel n'est fourni que dans le cadre de l'utilisation du/des Logiciel(s) ou Service(s) Nommé(s) répertorié(s) ci-dessous ou de leurs/ses versions ultérieures. Le Détenteur de la Licence n'est pas autorisé à utiliser ledit Logiciel en relation avec tout autre logiciel ou service.
+Ce Programme est fourni uniquement pour être utilisé avec les Programmes et/ou Services spécifiés ci-dessous ou leurs successeurs. Le Détenteur de licence n'est pas autorisé à utiliser ce Programme en relation avec tout autre logiciel ou service.   Programme(s) et/ou Service(s) spécifiés(s)  IBM Information Management System 15.3 or later
 
-Logiciel(s) et/ou Service(s) Nommé(s) :
-IBM Information Management System 15.3 or later
+Code tiers modifiable
 
-Code Tiers Modifiable
-
-Si, dans le fichier NOTICES, IBM identifie un code tiers comme étant un « Code Tiers Modifiable », IBM autorise le Détenteur de la Licence à 1) modifier le Code Tiers Modifiable et 2) recourir à l'ingénierie inverse sur les modules du Logiciel qui interagissent directement avec le Code Tiers Modifiable, sous réserve que le Détenteur de la Licence ait recours à cette méthode à des fins de débogage des modifications qu'il a apportées à ce code tiers. Les obligations d'IBM en matière de service et de support, le cas échéant, s'appliquent uniquement au Logiciel non modifié.
+Dans la mesure où, le cas échéant, dans le fichier NOTICES, IBM identifie un code tiers comme « Code tiers modifiable », IBM autorise le Détenteur de licence à 1) modifier le Code tiers modifiable et 2) disséquer les modules du Programme qui interagissent directement avec le Code tiers modifiable, à condition que ce soit uniquement dans le but de déboguer les modifications apportées par le Détenteur de licence à ce code tiers. Les obligations de service et de soutien d'IBM, le cas échéant, s'appliquent uniquement au Programme non modifié.
 
 
 L/N: L-DZEF-U52LX6

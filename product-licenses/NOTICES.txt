@@ -1,6 +1,6 @@
 NOTICES AND INFORMATION
 
-IBM IMS Explorer for VS Code 1.1
+IBM IMS Explorer for VS Code 1.2
 
 The IBM license agreement and any applicable information on the web
 download page for IBM products refers Licensee to this file for details
@@ -9,9 +9,8 @@ above ("the Program").
 
 Notwithstanding the terms and conditions of any other agreement Licensee
 may have with IBM or any of its related or affiliated entities
-(collectively "IBM"), the third party code identified below is subject
-to the terms and conditions of the IBM license agreement for the Program
-and not the license terms that may be contained in the notices below.
+(collectively "IBM"), the following licenses apply to the applicable
+third party code included in this application.
 The notices are provided for informational purposes.
 
 Please note: This Notices file may identify information that is not used
@@ -54,9 +53,16 @@ failureaccess
 gson
 guava
 j2objc-annotations
+jackson-annotations
+jackson-bom
+jackson-core
+jackson-databind
+jackson-dataformat-xml
+jakarta.validation-api
 jspecify
 listenablefuture
 log4js
+woodstox-core
 
 Apache License
 Version 2.0, January 2004
@@ -308,6 +314,7 @@ BSD-3-CLAUSE CODE NOTICES AND INFORMATION
 The Program includes some or all of the following that IBM obtained under the BSD-3-Clause License:
 
 
+stax2-api | Copyright 2008 FasterXML, LLC
 asm | Copyright OW2, Copyright 2000-2011 INRIA
 asm-commons | Copyright OW2, Copyright 2000-2011 INRIA
 asm-tree | Copyright OW2, Copyright 2000-2011 INRIA
@@ -405,6 +412,7 @@ License (source code available via the indicated URL):
 
 
 jakarta.json.bind-api-3.0.0.jar (https://repo.maven.apache.org/maven2/jakarta/json/bind/jakarta.json.bind-api/3.0.0/)
+jakarta.ws.rs-api-3.1.0.jar (https://repo.maven.apache.org/maven2/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/)
 org.eclipse.lsp4j-0.24.0.jar (https://repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j/0.24.0/)
 org.eclipse.lsp4j.jsonrpc-0.24.0.jar (https://repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.24.0/)
 org.jacoco.report-0.8.11.jar (https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.8.11/)
@@ -505,6 +513,6 @@ END OF NOTICES AND INFORMATION
 
 
 
-L/N: L-CXSF-B5FXZD
-D/N: L-CXSF-B5FXZD
-P/N: L-CXSF-B5FXZD
+L/N: L-DZEF-U52LX6
+D/N: L-DZEF-U52LX6
+P/N: L-DZEF-U52LX6

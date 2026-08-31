@@ -4,13 +4,18 @@ Welcome to the IMS Explorer Github repository. This repository provides you info
 
 **IMS Explorer for VS Code provides modern development practices and simplifies complex IMS development tasks using Visual Studio Code.**
 
-Designed for application developers, database administrators, and system programmers, IMS Explorer for VS Code provides built-in features to access IMS inside Visual Studio Code IDE. By combining multiple activities into one environment, IMS Explorer for VS Code promotes modern development practices and simplifies complex IMS development tasks. IMS Explorer for VS Code 1.1.0 supports the following actions:
+Designed for application developers, database administrators, and system programmers, IMS Explorer for VS Code provides built-in features to access IMS inside Visual Studio Code IDE. By combining multiple activities into one environment, IMS Explorer for VS Code promotes modern development practices and simplifies complex IMS development tasks. IMS Explorer for VS Code 1.2.0 supports the following actions:
 
 - Create and edit projects, driver definitions, and database connections.
 - Connect to IMS Catalog and browse IMS databases.
 - View PSB, DBD, DDL sources, segments and fields of your database.
 - Visualize DBDs and PSBs for IMS database connections and IMS projects.
 - Access IMS data with SQL queries.
+- Execute IMS Type 1 and Type 2 commands and view command output and history.
+- Edit, add, move, and delete DBD segment fields within IMS projects.
+- Use a local IMS Explorer project as the metadata source for an IMS connection profile.
+- Connect to IMS databases that use multi-factor authentication (MFA).
+- Use advanced search to find referenced DBDs and PSBs from the table views.
 
 See [Capabilities](#capabilities) below for more details.
 
@@ -29,7 +34,7 @@ View [full documentation](http://ibm.biz/ims-explorer-vscode-doc) and additional
 
 ## License
 
-- The license for the files managed in this repository, which may consists of files for issues, discussion items and education collaterals is in the file LICENSE.
+- The license for the files managed in this repository, which may consist of files for issues, discussion items and education collaterals is in the file LICENSE.
 - The license and notices files for the IMS Explorer for VS Code offering can be found in the product-licenses folder.
 
 ## Prerequisites
@@ -39,6 +44,7 @@ Review the [IMS Explorer for VS Code License Agreement](https://github.com/IBM/i
 The following software requirements must be met to run IMS Explorer for VS Code.
 
 - Microsoft VS Code version 1.105.0 or later.
+
 <!-- We recommend using always the latest VS Code version available. If you do not have VS Code installed we recommend using the [Visual Studio Code for Java Installer](https://code.visualstudio.com/docs/languages/java#_install-visual-studio-code-for-java) provided by Microsoft as it automatically downloads and installs a Java SDK together with VS Code. (See, but skip the next bullet for the Java dependency, if you use this option.) -->
 
 - Java SDK or JRE version 21 or later - 64 bit: The language servers included in this extension are implemented in Java, and require a 64-bit Java SDK or Runtime in order to start successfully. Examples of supported Java runtimes include the following:
@@ -67,7 +73,7 @@ There are several ways to download and install IBM IMS Explorer for VS Code. You
 #### Installing IBM IMS Explorer for VS Code from the VS Code marketplace
 
 1. Open **Visual Studio Code**.
-2. Go to the **Extensions** panel. You can do this by clicking **View**>**Extensions**.
+2. Go to the **Extensions** panel. You can do this by clicking **View** > **Extensions**.
 3. Search for **IMS Explorer for VS Code**.
 4. Select the page that features the [IBM IMS Explorer for VS Code](https://marketplace.visualstudio.com/items?itemName=IBM.ims-explorer-for-vscode) and click **Install**.
 
@@ -89,6 +95,7 @@ Configurations can be made in VS Code Extension settings in order to specify the
 
 - Specific Java installations used for IMS connections
 - JVM arguments for the IMS Connection
+- Additional JAR files for IMS connections
 - Logging level for IMS Explorer logs
 - Storage location for extension data
 
@@ -116,12 +123,12 @@ The IMS Explorer for VS Code extension utilizes VS Code user settings to configu
 
 ### Selecting the Java installation to use
 
-IMS Explorer for VS Code extension will scanned the following locations, in the order specified, for the first Java installation that is at least Version 21 and 64-Bit to be used. If the target Java fails to meet requirements, the remaining target locations will be scanned:
+IMS Explorer for VS Code extension scans the following locations, in the order specified, for the first Java installation that is at least Version 21 and 64-Bit to be used. If the target Java fails to meet requirements, the remaining target locations will be scanned:
 
 1. The `ims.explorer.connection.property.javaHome` VS Code user setting.
 1. The `java.jdt.ls.java.home` VS Code user setting.
 1. The `JAVA_HOME` environment variable.
-1. The PATH defined for the environment in which IMS Explorer for VS Code runs (i.e. you default Windows or MacOS path)
+1. The PATH defined for the environment in which IMS Explorer for VS Code runs (i.e. your default Windows or macOS path)
 1. A typical platform-specific location. For example, on MacOS it will execute the `/usr/libexec/java_home -V` and on Windows the `where java.exe` commands to locate a valid Java installation.
 
 Note that the methods at the end of the list require a significant amount of time as they are executing programs on your system. To improve startup times you should consider user settings as they provide the best startup performance.
@@ -150,9 +157,17 @@ JVM arguments are used for configuring connections to IMS. Use the following VS 
 "ims.explorer.connection.property.jvmArgs": "-Xms2g -Xmx4g -Denv=prod -Djavax.net.debug=ssl,handshake,trustmanager"
 ```
 
+### Configuring additional JARs
+
+Use the following VS Code Setting to specify additional JAR files required for IMS connections, such as a customized UDB driver or other dependencies. Separate multiple JAR paths with a semicolon (`;`). Do not use quotation marks around the paths.
+
+```json
+"ims.explorer.connection.property.additionalJars": "/Users/username/Downloads/udb-15.1.31.jar;/Users/username/Downloads/typeconvertars.jar"
+```
+
 ### Configuring log level
 
-The default Java logging level is info. Use the following VS Code Setting to change the value.
+The default Java logging level is `info`. Use the following VS Code Setting to change the value.
 
 ```json
 "ims.explorer.logging.level": "INFO"
@@ -162,7 +177,7 @@ The logs appear in the `IBM IMS Explorer for VS Code` output channel.
 
 ### Configuring IMS Workspace
 
-Use the following VS Code Setting to change the defult directory of the IMS Workspace location to store associated extension files.
+Use the following VS Code Setting to change the default directory of the IMS Workspace location to store associated extension files.
 
 On macOS:
 Default directory is the user home directory.
@@ -172,7 +187,7 @@ Default directory is the user home directory.
 ```
 
 On Windows:
-Default directory is current the user profile directory.
+The default directory is the current user profile directory.
 
 ```json
 "ims.explorer.property.ImsWorkspace": "C:\\Users\\%USERNAME%\\.vscode\\ims-workspace"
@@ -184,11 +199,28 @@ The following sections offer a preview of the features available with the IMS Ex
 
 <!-- For a complete view of all available features and how to use them, see the online documentation. -->
 
+### Welcome page
+
+A Welcome page is displayed when IMS Explorer for VS Code is first opened, helping users get started quickly with guided steps and links to key features.
+
 ### IMS connection profiles
 
-Create connections to IMS databases using the IMS connections view. IMS connections can be organized into folders and expanded or collapsed.
+Create connections to IMS databases using the IMS connections view. IMS connections can be organized into folders and expanded or collapsed. Two connection profile types are supported:
 
-![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/connections.gif)
+- **IMS Database** — connects to an IMS database via the IMS Catalog or a local IMS project as the metadata source.
+- **IMS Command** — connects to IMS to execute Type 1 and Type 2 commands.
+
+<!--![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/connections.gif)-->
+
+Create IMS database connection
+<!-- ![Create IMS database connection](add-connection-ims-db.gif) -->
+
+![Create IMS database connection](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/add-connection-ims-db.gif)
+
+Create IMS command connection
+<!-- ![Create IMS command connection](add-connection-ims-command.gif) -->
+
+![Create IMS command connection](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/add-connection-ims-command.gif)
 
 ### IMS connections tree and table views
 
@@ -196,40 +228,84 @@ You can add multiple IMS database connections in a tree view. Browse DBDs, PSBs,
 
 - Add IMS catalog and database connections
 - Expand and collapse database connection contents to view DBDs, PSBs, and PCBs
-- Select an individual DBD, PSB, or PCB and right-click to view DDL, segments, and source code
+- Select an individual DBD, PSB, or PCB and right-click to view segments and source code
 
-In addition to segments and fields, IMS database DBDs, PSBs, and PCBs can also be viewed in a table. This allows simple click navigation between related PSBs and PCBs to find associated segments and fields.
+In addition to segments and fields, IMS database DBDs, PSBs, and PCBs can also be viewed in a table with extended columns for DBDs, PSBs, Segments, and Fields. This allows simple click navigation between related PSBs and PCBs to find associated segments and fields.
 
-![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/databaseview.gif)
+[ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/databaseview.gif)
 
 You can verify connections to IMS databases or select another connection using the IMS Connection option in the status bar.
 
 ### IMS Projects
 
-Create IMS projects to edit and organize SQL queries to execute on IMS databases.
+Create IMS projects to edit and organize SQL queries and IMS commands to execute on IMS databases.
 
-![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/sqlproject.gif)
+<!-- ![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/sqlproject.gif) -->
+
+Create IMS project for PSB, DBD and SQL
+<!-- ![Create IMS database project](create-ims-database-project.gif) -->
+
+![Create IMS database project](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/create-ims-database-project.gif)
+
+Create IMS project for IMS commands
+<!-- ![Create IMS command project](create-ims-command-project.gif) -->
+
+![Create IMS command project](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/create-ims-command-project.gif)
 
 ### Edit and execute SQL
 
-Edit and execute SQL from an IMS project file against an IMS database using a specified database connection. A results window is provided with a table containing the resulting query information. You can sort and filter results within the table.
+Edit and execute SQL from an IMS project file against an IMS database using a specified database connection. DDL statements can also be run directly in the SQL editor. A results window is provided with a table containing the resulting query information. You can sort and filter results within the table.
 
 Each result set from SQL queries are stored in a query history view. You can download SQL result sets as a CSV file.
 
-![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/sqlresulthistory.gif)
+<!--![Execute SQL](sqlresulthistory.gif) -->
+
+![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/sqlresulthistory_1_2.gif)
+
+### Execute IMS commands
+
+Execute IMS Type 1 and Type 2 commands from a Command folder within an IMS project. Command results are displayed in a JSON Output view and a Command Output view, with execution status shown inline. Previously executed commands are available in the Command History.
+
+<!-- ![Execute IMS command](run-ims-command.gif) -->
+
+![Execute IMS command](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/run-ims-command.gif)
 
 ### Import DBDs and PSBs from the IMS catalog
 
-Select an IMS database connection from the IMS Connections View to import DBDs and PSBs from. Filter and select which DBDs and PSBs to import into an IMS project. Optionally, you can choose to import any referenced DBDs.
+Select an IMS database connection from the IMS Connections View to import DBDs and PSBs from. Use advanced search to filter by name and choose to import referenced DBDs, referencing PSBs, or all instances directly into a project.
 
-![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/import.gif)
+Import from catalog
+<!-- ![Import from catalog](import-from-catalog.gif) -->
+
+![Import from catalog](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/import-from-catalog.gif)
+
+Advanced Search and import reference DBDs and PSBs
+<!--![Import from catalog](advance-search.gif)-->
+
+![Advanced Search and references import](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/advance-search.gif)
+
+### Edit DBD segment fields
+
+Add, edit, move, and delete segment fields within DBDs in an IMS project. Changes are reflected in the source code and DDL views within the project.
+
+Add Fields
+<!-- ![Add Fields](add-fields.gif) -->
+
+![Add Fields](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/add-fields.gif)
+
+Edit and Delete Fields
+<!-- ![Edit and Delete Fields](edit-and-delete-fields.gif) -->
+
+![Edit and Delete Fields](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/edit-and-delete-fields.gif)
 
 ### Visualize DBDs and PSBs
 
 View DBDs and PSBs in an interactive hierarchical visualization, allowing visual navigation of segments and view of segment fields by expanding their contents. Swap between source, DDL, tables, or visualization as needed using tabs or context menus.
 
-![ ](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/visualization.gif)
+<!-- ![Visualize DBD and PSB](visualization.gif)> -->
+
+![Visualize DBD and PSB](https://github.com/IBM/ims-explorer-about/raw/HEAD/readme/visualization_1_2.gif)
 
 ## Support
 
-To report issues or submit feedback about this extension, you can contact support or open an [issue in our GitHub repository](https://github.com/IBM/ims-explorer-about/issues). GitHub issues may also be used to submit requests for future enhancements
+To report issues or submit feedback about this extension, you can contact IBM support or open an [issue in our GitHub repository](https://github.com/IBM/ims-explorer-about/issues). GitHub issues may also be used to submit requests for future enhancements.
